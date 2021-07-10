@@ -2,9 +2,10 @@ import PropTypes from 'prop-types';
 import { Icon } from '../icon'
 
 const NavButton = (props) => {
-    const { text, handleNav, iconName } = props;
+    const { text, iconName } = props;
+    
     return (
-        <button className="nav-button" onClick={handleNav}>
+        <button className="nav-button">
             <div>
                 <Icon size={30} iconName={iconName} />
                 <span>{text}</span>
