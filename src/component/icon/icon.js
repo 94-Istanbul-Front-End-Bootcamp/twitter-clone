@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import { Icon as IconSystem } from "react-icon-system";
 
 const Icon = (props) => {
     const { size, iconName } = props;
     return (
-        <img style={{ height: size, width: size }} src={`./assest/icons/${iconName}`} />
+        <IconSystem style={{ height: size, width: size, color: "#03A9F4" }} src={iconName} />
     );
 }
 

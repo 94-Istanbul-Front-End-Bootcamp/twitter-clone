@@ -7,11 +7,12 @@ class SideLeft extends Component {
     handleNav = () => {
         console.log("tik");
     }
+    
     render() {
         return (
-            <div>
-                <Icon size={40} iconName="twitter.svg" />
-                <NavButton text="Home" iconName="home.svg" handleNav={this.handleNav} />
+            <div className="side-left">
+                <Icon size={40} iconName="twitter" />
+                <NavButton text="Home" iconName="home" handleNav={this.handleNav} />
             </div>
         );
     }

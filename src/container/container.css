@@ -1,0 +1,33 @@
+.side-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 5vw;
+  padding-top: 3vh;
+}
+
+.nav-button {
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  border-radius: 20px;
+}
+
+.nav-button div{
+    display: flex;
+    padding: 5px;
+}
+
+.nav-button span {
+  margin-left: 1vw;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.nav-button:hover {
+  background-color: rgb(100,100,100,0.1);
+}
