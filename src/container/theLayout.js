@@ -1,26 +1,24 @@
-import { Container, Row, Col } from 'react-bootstrap';
 import {
     Content,
     SideLeft,
     SideRight
-} from './index'
-import "./container.css";
+} from './index';
 
 const TheLayout = () => {
     return (
-        <Container fluid>
-            <Row>
-                <Col xs={3}>
+        <div className="loggedView">
+            <div className="container">
+                <div className="row">
                     <SideLeft />
-                </Col>
-                <Col xs={5}>
-                    <Content />
-                </Col>
-                <Col xs={4}>
+                    <div className="col-6">
+                        <div className="main">
+                            <Content />
+                        </div>
+                    </div>
                     <SideRight />
-                </Col>
-            </Row>
-        </Container>
+                </div>
+            </div>
+        </div>
     );
 }
 

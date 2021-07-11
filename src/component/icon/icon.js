@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
-import { Icon as IconSystem } from "react-icon-system";
 
 const Icon = (props) => {
     const { size, iconName } = props;
+    const FeatherIcon = require(`react-feather/dist/icons/${iconName}`).default;
     return (
-        <IconSystem style={{ height: size, width: size, color: "#03A9F4" }} src={iconName} />
+        <FeatherIcon
+            size={size}
+            className="nav__logoSVG" />
     );
 }
 

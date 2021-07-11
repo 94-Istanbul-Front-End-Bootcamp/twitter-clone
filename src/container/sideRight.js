@@ -1,5 +1,3 @@
-import "./container.css";
-
 const SideRight = () => {
     return (
         <div>

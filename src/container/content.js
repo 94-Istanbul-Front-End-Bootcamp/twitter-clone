@@ -1,4 +1,3 @@
-import "./container.css";
 import {
     Switch,
     Route
