@@ -2,7 +2,7 @@ import {
     Switch,
     Route
 } from "react-router-dom";
-import { Explore, Messages, Notification, Home } from '../view';
+import { Explore, Messages, Notification, Home, Bookmarks } from '../view';
 
 const Content = () => {
     return (
@@ -15,6 +15,9 @@ const Content = () => {
             </Route>
             <Route path="/notification">
                 <Notification />
+            </Route>
+            <Route path="/bookmarks">
+                <Bookmarks />
             </Route>
             <Route path="/">
                 <Home />
