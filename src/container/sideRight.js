@@ -1,7 +1,11 @@
+import { SearchInput } from '../component/searchInput';
+import { TrendingList } from '../component/trendingList';
+
 const SideRight = () => {
     return (
-        <div>
-            Sağ
+        <div className="rightSidebar col">
+            <SearchInput />
+            <TrendingList />
         </div>
     );
 }

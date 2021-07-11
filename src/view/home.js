@@ -1,15 +1,33 @@
 import React, { Component } from "react";
 import { Header } from '../container';
 import { TweetForm } from '../component/tweetForm';
+import { TweetList } from '../component/tweetList';
 
 class Home extends Component {
     constructor() {
         super();
         this.state = {
-            tweetText: ""
+            tweetText: "",
+            tweets: []
         }
         this.onChangeTweetForm = this.onChangeTweetForm.bind(this);
         this.handleTweetSubmit = this.handleTweetSubmit.bind(this);
+    }
+
+    componentWillMount() {
+        fetch('data.json', {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                this.setState({ tweets: data });
+            })
+            .catch(err => console.log(err));
     }
 
     onChangeTweetForm(event) {
@@ -21,7 +39,7 @@ class Home extends Component {
     }
 
     render() {
-        const { tweetText } = this.state;
+        const { tweetText, tweets } = this.state;
 
         return (
             <div className="latestTweets">
@@ -31,7 +49,13 @@ class Home extends Component {
                     onChangeTweetForm={this.onChangeTweetForm}
                     handleTweetSubmit={this.handleTweetSubmit} />
                 <div className="latestTweets__divisor" />
-                <span>asgadsf</span>
+                {
+                    tweets.length > 0 ? (
+                        <TweetList tweets={tweets} />
+                    ) : (
+                        <span>Loading...</span>
+                    )
+                }
             </div>
         );
     }

@@ -341,7 +341,7 @@ body {
   border-radius: 9999px;
   background: none;
   border: none;
-  color: rgb(121, 75, 196);
+  color: rgb(75, 132, 196);
 }
 
 .tweetField__items:hover {
@@ -353,7 +353,7 @@ body {
 }
 
 .tweetField__submitButton {
-  background-color: rgb(121, 75, 196);
+  background-color: rgb(75, 132, 196);
   margin-left: 9px;
   min-width: calc(59.57px);
   min-height: 37px;
@@ -366,11 +366,11 @@ body {
 }
 
 .tweetField__submitButton:hover {
-  background-color: rgb(134, 93, 202);
+  background-color: rgb(112, 155, 205);
 }
 
 .tweetField__submitButton:active {
-  background-color: rgb(148, 111, 208);
+  background-color: rgb(112, 155, 205);
 }
 
 .tweetsContainer {
