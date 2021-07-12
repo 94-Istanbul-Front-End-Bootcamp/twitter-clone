@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { TheLayout } from './container';
+import { Login } from './view';
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,17 +10,23 @@ import {
 import './app.css';
 
 const App = () => {
-
+  let isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
+  
   return (
     <Router>
       <Switch>
         <Route exact path="/404">
           <div>404</div>
         </Route>
-        <Route path="/">
-          <TheLayout />
+        <Route exact path="/login">
+          <Login />
         </Route>
-        <Redirect from="/" to="/home" />
+        {isLoggedIn === null ? (
+          <Route path="/">
+            <TheLayout />
+          </Route>
+        ) : null}
+        <Redirect from="*" to="/login" />
       </Switch>
     </Router>
   );

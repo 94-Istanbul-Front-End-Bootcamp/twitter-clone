@@ -6,7 +6,8 @@ const Icon = (props) => {
     return (
         <FeatherIcon
             size={size}
-            className="nav__logoSVG" />
+            className="nav__logoSVG"
+            style={{color: !!props.color ? props.color : ""}} />
     );
 }
 

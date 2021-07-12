@@ -523,3 +523,57 @@ body {
   color: rgb(224, 36, 94);
   background: rgba(224, 36, 94, 0.1);
 }
+.login-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-form{
+  border: 1px solid #E1E8ED;
+  border-radius: 10px;
+  padding: 50px;
+  width: 50vw;
+  margin: 0 auto;
+  color: grey;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 12px;
+}
+
+.login-form input{
+  margin-bottom: 10px;
+}
+
+.login-form ::-webkit-input-placeholder{
+  font-size: 14px;
+}
+
+.user-name-input,
+.password-input{
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+}
+
+.user-name-input:focus,
+.password-input:focus{
+  border: 1px solid #1DA1F2;
+  outline: none;
+}
+
+.login-submit-button{
+  width: 100%;
+  background: #1DA1F2;
+  padding: 10px;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+}
+
+.login-icon-wrapper {
+  margin-bottom: 20px;
+}

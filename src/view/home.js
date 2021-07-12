@@ -15,7 +15,7 @@ class Home extends Component {
     }
 
     componentWillMount() {
-        fetch('data.json', {
+        fetch('tweetData.json', {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'

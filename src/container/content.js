@@ -1,6 +1,7 @@
 import {
     Switch,
-    Route
+    Route,
+    Redirect
 } from "react-router-dom";
 import { Explore, Messages, Notification, Home, Bookmarks } from '../view';
 
@@ -19,9 +20,10 @@ const Content = () => {
             <Route path="/bookmarks">
                 <Bookmarks />
             </Route>
-            <Route path="/">
+            <Route path="/home">
                 <Home />
             </Route>
+            <Redirect from="*" to="/home" />
         </Switch>
     );
 }
