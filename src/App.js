@@ -11,7 +11,6 @@ import './app.css';
 
 const App = () => {
   let isLoggedIn = JSON.parse(localStorage.getItem("isLoggedIn"));
-  
   return (
     <Router>
       <Switch>
@@ -21,11 +20,9 @@ const App = () => {
         <Route exact path="/login">
           <Login />
         </Route>
-        {isLoggedIn === null ? (
-          <Route path="/">
-            <TheLayout />
-          </Route>
-        ) : null}
+        <Route path="/">
+          <TheLayout />
+        </Route>
         <Redirect from="*" to="/login" />
       </Switch>
     </Router>

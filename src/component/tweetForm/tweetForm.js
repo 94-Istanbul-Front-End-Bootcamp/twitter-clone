@@ -1,13 +1,14 @@
 import React from 'react';
 import { Icon } from '../icon';
+import { PpImage } from '../ppImage';
 
 const TweetForm = (props) => {
-    const { tweetText, onChangeTweetForm, handleTweetSubmit } = props;
+    const { tweetText, onChangeTweetForm, handleTweetSubmit, profilePicture } = props;
 
     return (
         <div className="tweetField">
             <div className="tweetField__profilePic">
-                <Icon size={46} iconName="user" />
+                <PpImage src={profilePicture} />
             </div>
             <div className="tweetField__inputContainer">
                 <input

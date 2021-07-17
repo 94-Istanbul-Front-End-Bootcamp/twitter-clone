@@ -6,7 +6,7 @@
 
 body {
   background: rgb(21, 32, 43);
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 13px;
   color: #ffffff;
 }
@@ -168,7 +168,7 @@ body {
   min-height: 100px;
   max-height: calc(-49px + 80vh);
   box-shadow: rgba(136, 153, 166, 0.2) 0px 0px 15px,
-      rgba(136, 153, 166, 0.15) 0px 0px 3px 1px;
+    rgba(136, 153, 166, 0.15) 0px 0px 3px 1px;
   background-color: rgb(21, 32, 43);
   overflow-y: auto;
   border-radius: 5px;
@@ -508,6 +508,10 @@ body {
   padding: 5px 7px;
 }
 
+.isLike{
+  color: rgb(224, 36, 94) !important;
+}
+
 .tweetsContainer__items button.comment:hover,
 .tweetsContainer__items button.share:hover {
   background: rgba(29, 161, 242, 0.1);
@@ -523,15 +527,15 @@ body {
   color: rgb(224, 36, 94);
   background: rgba(224, 36, 94, 0.1);
 }
-.login-wrapper{
+.login-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-.login-form{
-  border: 1px solid #E1E8ED;
+.login-form {
+  border: 1px solid #e1e8ed;
   border-radius: 10px;
   padding: 50px;
   width: 50vw;
@@ -542,16 +546,16 @@ body {
   font-size: 12px;
 }
 
-.login-form input{
+.login-form input {
   margin-bottom: 10px;
 }
 
-.login-form ::-webkit-input-placeholder{
+.login-form ::-webkit-input-placeholder {
   font-size: 14px;
 }
 
 .user-name-input,
-.password-input{
+.password-input {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
@@ -559,14 +563,14 @@ body {
 }
 
 .user-name-input:focus,
-.password-input:focus{
-  border: 1px solid #1DA1F2;
+.password-input:focus {
+  border: 1px solid #1da1f2;
   outline: none;
 }
 
-.login-submit-button{
+.login-submit-button {
   width: 100%;
-  background: #1DA1F2;
+  background: #1da1f2;
   padding: 10px;
   color: white;
   font-size: 16px;
@@ -576,4 +580,10 @@ body {
 
 .login-icon-wrapper {
   margin-bottom: 20px;
+}
+
+.pp-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
 }
