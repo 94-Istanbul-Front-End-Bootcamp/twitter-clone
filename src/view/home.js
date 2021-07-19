@@ -2,65 +2,29 @@ import React, { Component } from "react";
 import { Header } from '../container';
 import { TweetForm } from '../component/tweetForm';
 import { TweetList } from '../component/tweetList';
-import moment from 'moment';
-import { v4 as uuidv4 } from 'uuid';
+import { getTweets, handleTweetSubmit, changeTweetForm } from '../store/actions';
+import { connect } from 'react-redux';
 
 let userData = JSON.parse(localStorage.getItem("user"));
 
 class Home extends Component {
     constructor() {
         super();
-        this.state = {
-            tweetText: "",
-            tweets: []
-        }
         this.onChangeTweetForm = this.onChangeTweetForm.bind(this);
-        this.handleTweetSubmit = this.handleTweetSubmit.bind(this);
         this.tweetLike = this.tweetLike.bind(this);
     }
 
     componentWillMount() {
-        fetch('tweetData.json', {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            }
-        })
-            .then(response => {
-                return response.json();
-            })
-            .then(data => {
-                this.setState({ tweets: data });
-            })
-            .catch(err => console.log(err));
+        this.props.getTweets();
     }
 
     onChangeTweetForm(event) {
-        this.setState({ tweetText: event.target.value });
-    }
-
-    handleTweetSubmit() {
-        let newTweets = this.state.tweets;
-        let now = moment().format('YYYY-MM-DD hh:mm:ss');
-        newTweets.unshift({
-            "id": uuidv4(),
-            "name": userData.name,
-            "username": userData.username,
-            "tweetContent": this.state.tweetText,
-            "likeCount": 0,
-            "retweetCount": 0,
-            "replyCount": 0,
-            "dateTime": now,
-            "profilePicture": userData.profilePicture
-        });
-
-        this.setState({
-            tweets: [...newTweets]
-        });
+        this.props.changeTweetForm(event.target.value);
     }
 
     tweetLike(id) {
-        let newTweets = this.state.tweets;
+        console.log(id);
+        /*let newTweets = this.state.tweets;
         let tweetsIndex = newTweets.findIndex(tweet => tweet.id === id);
 
         if (newTweets[tweetsIndex].isLike) {
@@ -73,18 +37,18 @@ class Home extends Component {
 
         this.setState({
             tweets: [...newTweets]
-        });
+        });*/
     }
 
     render() {
-        const { tweetText, tweets } = this.state;
+        const { tweets, tweetText, handleTweetSubmit } = this.props;
         return (
             <div className="latestTweets">
                 <Header title="Home" />
                 <TweetForm
                     tweetText={tweetText}
                     onChangeTweetForm={this.onChangeTweetForm}
-                    handleTweetSubmit={this.handleTweetSubmit}
+                    handleTweetSubmit={() => { handleTweetSubmit(tweetText) }}
                     profilePicture={userData.profilePicture} />
                 <div className="latestTweets__divisor" />
                 {
@@ -99,4 +63,12 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapStateToProps = (state) => {
+    return state.Tweets;
+}
+
+export default connect(mapStateToProps, {
+    getTweets,
+    handleTweetSubmit,
+    changeTweetForm
+})(Home);

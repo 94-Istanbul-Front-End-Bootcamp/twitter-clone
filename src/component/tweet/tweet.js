@@ -77,7 +77,7 @@ Tweet.propTypes = {
     replyCount: PropTypes.number.isRequired,
     retweetCount: PropTypes.number.isRequired,
     likeCount: PropTypes.number.isRequired,
-    likeTweet: PropTypes.func.isRequired
+    onTweetLike: PropTypes.func.isRequired
 }
 
 export default Tweet;
